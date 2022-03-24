@@ -14,27 +14,32 @@ void	PhoneBook::add_contact(void)
 	do
 	{
 		std::cout << "Enter the first name : ";
-		getline(std::cin, str);
+		if (!getline(std::cin, str))
+			return ;
 	} while (!this->_contact[this->_index].setFirstName(str));
 	do
 	{
 		std::cout << "Enter the last name : ";
-		getline(std::cin, str);
+		if (!getline(std::cin, str))
+			return ;
 	} while (!this->_contact[this->_index].setLastName(str));
 	do
 	{
 		std::cout << "Enter the nickname : ";
-		getline(std::cin, str);
+		if (!getline(std::cin, str))
+			return ;
 	} while (!this->_contact[this->_index].setNickName(str));
 	do
 	{
 		std::cout << "Enter the phone number : ";
-		getline(std::cin, str);
+		if (!getline(std::cin, str))
+			return ;
 	} while (!this->_contact[this->_index].setNumber(str));
 	do
 	{
 		std::cout << "Enter the darkest secret : ";
-		getline(std::cin, str);
+		if (!getline(std::cin, str))
+			return ;
 	} while (!this->_contact[this->_index].setSecret(str));
 	_index = (_index + 1) % 8;
 	if (_nbrContact < 8)
@@ -85,7 +90,8 @@ int		PhoneBook::_recover_index(void) const
 	while (true)
 	{
 		std::cout << "Please select the index contact to display : ";
-		getline(std::cin, str);
+		if (!getline(std::cin, str))
+			return(0);
 		if (str.size() == 1 && isdigit(str[0]))
 		{
 			index = (int)str[0] - 48;
