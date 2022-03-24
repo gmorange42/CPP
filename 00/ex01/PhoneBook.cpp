@@ -109,7 +109,7 @@ void	PhoneBook::search_contact(void) const
 	i = _recover_index();
 	std::cout << "First name     :" << this->_contact[i].getFirstName() << std::endl;
 	std::cout << "Last name      :" << this->_contact[i].getLastName() << std::endl;
-	std::cout << "Nickname      :" << this->_contact[i].getNickName() << std::endl;
+	std::cout << "Nickname `     :" << this->_contact[i].getNickName() << std::endl;
 	std::cout << "Phone number   :" << this->_contact[i].getNumber() << std::endl;
 	std::cout << "Darkset secret :" << this->_contact[i].getSecret() << std::endl << std::endl;;
 }
