@@ -23,7 +23,7 @@ void	PhoneBook::add_contact(void)
 	} while (!this->_contact[this->_index].setLastName(str));
 	do
 	{
-		std::cout << "Enter the nick name : ";
+		std::cout << "Enter the nickname : ";
 		getline(std::cin, str);
 	} while (!this->_contact[this->_index].setNickName(str));
 	do
@@ -55,7 +55,7 @@ void	PhoneBook::_print_contact(void) const
 {
 	int	i = 0;
 	std::string	str;
-	std::cout << "|     INDEX|FIRST NAME| LAST NAME| NICK NAME|" << std::endl;
+	std::cout << "|     INDEX|FIRST NAME| LAST NAME|  NICKNAME|" << std::endl;
 	std::cout.width(45);
 	std::cout.fill('-');
 	std::cout << "" << std::endl;
@@ -109,7 +109,7 @@ void	PhoneBook::search_contact(void) const
 	i = _recover_index();
 	std::cout << "First name     :" << this->_contact[i].getFirstName() << std::endl;
 	std::cout << "Last name      :" << this->_contact[i].getLastName() << std::endl;
-	std::cout << "Nick name      :" << this->_contact[i].getNickName() << std::endl;
+	std::cout << "Nickname      :" << this->_contact[i].getNickName() << std::endl;
 	std::cout << "Phone number   :" << this->_contact[i].getNumber() << std::endl;
 	std::cout << "Darkset secret :" << this->_contact[i].getSecret() << std::endl << std::endl;;
 }
