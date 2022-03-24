@@ -10,10 +10,15 @@ class	PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-//		void	print_contact(void) const;
-		void	add_contact(Contact &contact);
+		void		search_contact(void) const;
+		void		add_contact(void);
 	private:
-		Contact _contact[8];
+		void		_print_contact(void) const;
+		std::string	_truncate(std::string) const;
+		int			_recover_index(void) const;
+		int			_index;
+		int			_nbrContact;
+		Contact		_contact[8];
 };
 
 #endif

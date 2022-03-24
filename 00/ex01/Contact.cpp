@@ -40,6 +40,7 @@ bool	Contact::setFirstName(std::string str)
 		this->_firstName = str;
 		return (true);
 	}
+	std::cout << "Incorrect entry." << std::endl;
 	return (false);
 }
 
@@ -50,6 +51,7 @@ bool	Contact::setLastName(std::string str)
 		this->_lastName = str;
 		return (true);
 	}
+	std::cout << "Incorrect entry." << std::endl;
 	return (false);
 }
 
@@ -60,6 +62,7 @@ bool	Contact::setNickName(std::string str)
 		this->_nickName = str;
 		return (true);
 	}
+	std::cout << "Incorrect entry." << std::endl;
 	return (false);
 }
 
@@ -71,10 +74,14 @@ bool	Contact::setNumber(std::string str)
 		while (isdigit(str[i]))
 			i++;
 		if (i != 10)
+		{
+			std::cout << "Incorrect entry. Only digits." << std::endl;
 			return (false);
+		}
 		this->_phoneNumber = str;
 		return (true);
 	}
+	std::cout << "Incorrect entry. Request 10 digits." << std::endl;
 	return (false);
 }
 
@@ -85,5 +92,7 @@ bool	Contact::setSecret(std::string str)
 		this->_secret = str;
 		return (true);
 	}
+	std::cout << "Incorrect entry." << std::endl;
 	return (false);
 }
+

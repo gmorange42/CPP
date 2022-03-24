@@ -1,19 +1,28 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 
-void	add(PhoneBook &phonebook, Contact &contact[])
-{
-}
-
 int	main(void)
 {
-	int	oldest = 0;
-	int	i = 0;
-	int	nbr_contact = 0;
-	PhoneBook phonebook;
-	Contact contact[8];
+	PhoneBook	phonebook;
+	std::string	input;
 
-	std::cout << "TEST : " << contact->getFirstName() << ' ' << contact->getLastName() << ' ' << contact->getNumber() << ' ' << contact->getSecret() << std::endl;
-	phonebook.add_contact(contact[i]);
+	std::cout << "Hello ! Welcome to the phonebook's NO NAME !" << std::endl;
+	while(true)
+	{
+		std::cout << "Please enter a command : [ADD] [SEARCH] [EXIT]" << std::endl;
+		getline(std::cin, input);
+		if (input == "ADD")
+			phonebook.add_contact();
+		else if (input == "SEARCH")
+			phonebook.search_contact();
+		else if (input == "EXIT")
+		{
+			std::cout << "Thank you for choosing NO NAME, good bye !" << std::endl;
+			break;
+		}
+		else
+			std::cout << "Invalide command." << std::endl;
+
+	}
 	return (0);
 }
