@@ -8,42 +8,23 @@ PhoneBook::~PhoneBook()
 {
 }
 
-void	PhoneBook::add_contact(void)
+bool	PhoneBook::add_contact(void)
 {
 	std::string	str;
-	do
-	{
-		std::cout << "Enter the first name : ";
-		if (!getline(std::cin, str))
-			return ;
-	} while (!this->_contact[this->_index].setFirstName(str));
-	do
-	{
-		std::cout << "Enter the last name : ";
-		if (!getline(std::cin, str))
-			return ;
-	} while (!this->_contact[this->_index].setLastName(str));
-	do
-	{
-		std::cout << "Enter the nickname : ";
-		if (!getline(std::cin, str))
-			return ;
-	} while (!this->_contact[this->_index].setNickName(str));
-	do
-	{
-		std::cout << "Enter the phone number : ";
-		if (!getline(std::cin, str))
-			return ;
-	} while (!this->_contact[this->_index].setNumber(str));
-	do
-	{
-		std::cout << "Enter the darkest secret : ";
-		if (!getline(std::cin, str))
-			return ;
-	} while (!this->_contact[this->_index].setSecret(str));
+	if (!this->_contact[this->_index].setFirstName())
+		return (false);
+	if (!this->_contact[this->_index].setLastName())
+		return (false);
+	if (!this->_contact[this->_index].setNickName())
+		return (false);
+	if (!this->_contact[this->_index].setNumber())
+		return (false);
+	if (!this->_contact[this->_index].setSecret())
+		return (false);
 	_index = (_index + 1) % 8;
 	if (_nbrContact < 8)
 		_nbrContact++;
+	return (true);
 }
 
 std::string	PhoneBook::_truncate(std::string str) const
@@ -113,9 +94,9 @@ void	PhoneBook::search_contact(void) const
 	}
 	_print_contact();
 	i = _recover_index();
-	std::cout << "First name     :" << this->_contact[i].getFirstName() << std::endl;
-	std::cout << "Last name      :" << this->_contact[i].getLastName() << std::endl;
-	std::cout << "Nickname `     :" << this->_contact[i].getNickName() << std::endl;
-	std::cout << "Phone number   :" << this->_contact[i].getNumber() << std::endl;
-	std::cout << "Darkset secret :" << this->_contact[i].getSecret() << std::endl << std::endl;;
+	std::cout << "First name     : " << this->_contact[i].getFirstName() << std::endl;
+	std::cout << "Last name      : " << this->_contact[i].getLastName() << std::endl;
+	std::cout << "Nickname       : " << this->_contact[i].getNickName() << std::endl;
+	std::cout << "Phone number   : " << this->_contact[i].getNumber() << std::endl;
+	std::cout << "Darkset secret : " << this->_contact[i].getSecret() << std::endl << std::endl;;
 }

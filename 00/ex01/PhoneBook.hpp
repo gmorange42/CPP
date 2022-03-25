@@ -11,7 +11,7 @@ class	PhoneBook
 		PhoneBook();
 		~PhoneBook();
 		void		search_contact(void) const;
-		void		add_contact(void);
+		bool		add_contact(void);
 	private:
 		void		_print_contact(void) const;
 		std::string	_truncate(std::string) const;

@@ -33,66 +33,102 @@ std::string	Contact::getSecret(void) const
 	return (_secret);
 }
 
-bool	Contact::setFirstName(std::string str)
+bool	Contact::setFirstName(void)
 {
-	if (str.size() > 0)
+	std::string str;
+	while (true)
 	{
-		this->_firstName = str;
-		return (true);
-	}
-	std::cout << "Incorrect entry." << std::endl;
-	return (false);
-}
-
-bool	Contact::setLastName(std::string str)
-{
-	if (str[0])
-	{
-		this->_lastName = str;
-		return (true);
-	}
-	std::cout << "Incorrect entry." << std::endl;
-	return (false);
-}
-
-bool	Contact::setNickName(std::string str)
-{
-	if (str[0])
-	{
-		this->_nickName = str;
-		return (true);
-	}
-	std::cout << "Incorrect entry." << std::endl;
-	return (false);
-}
-
-bool	Contact::setNumber(std::string str)
-{
-	int	i = 0;
-	if ((int)str.size() == 10)
-	{
-		while (isdigit(str[i]))
-			i++;
-		if (i != 10)
+		std::cout << "Enter the first name : ";
+		if (!getline(std::cin, str))
+			break;
+		if (str.size() > 0)
 		{
-			std::cout << "Incorrect entry. Only digits." << std::endl;
-			return (false);
+			this->_firstName = str;
+			return (true);
 		}
-		this->_phoneNumber = str;
-		return (true);
+		std::cout << "Incorrect entry." << std::endl;
 	}
-	std::cout << "Incorrect entry. Request 10 digits." << std::endl;
 	return (false);
 }
 
-bool	Contact::setSecret(std::string str)
+bool	Contact::setLastName(void)
 {
-	if (str[0])
+	std::string str;
+	while (true)
 	{
-		this->_secret = str;
-		return (true);
+		std::cout << "Enter the last name : ";
+		if (!getline(std::cin, str))
+			break;
+		if (str.size() > 0)
+		{
+			this->_lastName = str;
+			return (true);
+		}
+		std::cout << "Incorrect entry." << std::endl;
 	}
-	std::cout << "Incorrect entry." << std::endl;
+	return (false);
+}
+
+bool	Contact::setNickName(void)
+{
+	std::string str;
+	while (true)
+	{
+		std::cout << "Enter the nickname : ";
+		if (!getline(std::cin, str))
+			break;
+		if (str.size() > 0)
+		{
+			this->_nickName = str;
+			return (true);
+		}
+		std::cout << "Incorrect entry." << std::endl;
+	}
+	return (false);
+}
+
+bool	Contact::setNumber(void)
+{
+	int		i = 0;
+	std::string	str;
+	while (true)
+	{
+		std::cout << "Enter the phone number : ";
+		if (!getline(std::cin, str))
+			break;
+		if ((int)str.size() == 10)
+		{
+			while (isdigit(str[i]))
+				i++;
+			if (i != 10)
+				std::cout << "Incorrect entry. Only digits." << std::endl;
+			else
+			{
+				this->_phoneNumber = str;
+				return (true);
+			}
+		}
+		else
+			std::cout << "Incorrect entry. Request 10 digits." << std::endl;
+	}
+	return (false);
+}
+
+bool	Contact::setSecret(void)
+{
+	std::string str;
+	while (true)
+	{
+		std::cout << "Enter the darkest secret : ";
+		if (!getline(std::cin, str))
+			break;
+		if (str.size() > 0)
+		{
+			this->_secret = str;
+			return (true);
+		}
+		std::cout << "Incorrect entry." << std::endl;
+	}
 	return (false);
 }
 
