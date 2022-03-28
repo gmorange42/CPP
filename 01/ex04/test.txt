@@ -1,5 +1,4 @@
-test test
-otest
-Hello, je suis un test.
-J'aime bien les poneys sauvages.
-Bisous!
+Hello!
+
+J'aime les poneys sauvages en tenue de cosmonaute.
+Ils sont si mignons !

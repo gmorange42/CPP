@@ -2,24 +2,33 @@
 #include <string>
 #include <fstream>
 
-int	main(int av, char **ac)
+int	main(int ac, char **av)
 {
 	std::string	temp;
 	std::size_t	found;
-	if (av != 4)
+	std::string	old_str;
+	std::string	new_str;
+	if (ac != 4)
 	{
 		std::cout << "Error, three parameters required" << std::endl;
 		return (1);
 	}
-	std::ifstream	ifs(ac[1]);
+	old_str = av[2];
+	new_str = av[3];
+	if (old_str.empty() or new_str.empty())
+	{
+		std::cout << "Error, Invalid argument" << std::endl;
+		return (1);
+	}
+	std::ifstream	ifs(av[1]);
 	if (!ifs)
 	{
 		std::cout << "ifstream failed" << std::endl;
 		return (1);
 	}
-	std::string	outFileName = ac[1];
+	std::string	outFileName = av[1];
 	outFileName += ".replace";
-	std::ofstream	ofs(outFileName);
+	std::ofstream	ofs(outFileName.c_str());
 	if (!ofs)
 	{
 		std::cout << "ofstream failed" << std::endl;
@@ -28,17 +37,15 @@ int	main(int av, char **ac)
 	while (getline(ifs, temp))
 	{
 		found = 0;
-		std::cout << temp << std::endl;
-//		found = temp.find(ac[2], 0);i	
-//		std::cout << "TEST : " << std::string::npos << ' ' << found << std::endl;
-		while (found != std::string::npos)
+		while (found < temp.size() && found != std::string::npos)
 		{
-			found = temp.find(ac[2]);
-			if (found != std::string::npos)
+			found = temp.find(old_str, found);
+			if (found < temp.size() && found != std::string::npos) 
 			{
-			
+				temp.erase(found, old_str.size());
+				temp.insert(found, new_str);
+				found++;
 			}
-			std::cout << "TEST : " << std::string::npos << ' ' << found << std::endl;
 		}
 		ofs << temp << std::endl;
 	}
