@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 			{
 				temp.erase(found, old_str.size());
 				temp.insert(found, new_str);
-				found++;
+				found += new_str.size();
 			}
 		}
 		ofs << temp << std::endl;

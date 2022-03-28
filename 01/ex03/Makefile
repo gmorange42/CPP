@@ -1,5 +1,5 @@
-NAME = weapon
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+NAME = human
+CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 CXX = c++
 OBJS = $(SRCS:.cpp=.o)
 SRCS =	./main.cpp \
@@ -10,10 +10,10 @@ SRCS =	./main.cpp \
 all: $(NAME)
 
 %.o: %.cpp
-	$(CXX) $(CLFAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(CXX) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
