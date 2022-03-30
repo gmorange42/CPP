@@ -3,7 +3,7 @@
 
 int	main(void)
 {
-	std::cout << "randomChump{\"Jack\");" << std::endl;
+	std::cout << "randomChump(\"Jack\");" << std::endl;
 	randomChump("Jack");
 	std::cout << "Zombie* Franck = newZombie(\"Franck\");" << std::endl;
 	Zombie*	Franck = newZombie("Franck");

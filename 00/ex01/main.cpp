@@ -22,7 +22,7 @@ int	main(void)
 			break;
 		}
 		else
-			std::cout << "Invalide command." << std::endl;
+			std::cout << "Invalid command." << std::endl;
 
 	}
 	return (0);
