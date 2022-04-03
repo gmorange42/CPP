@@ -13,13 +13,19 @@ Fixed::Fixed(Fixed const& ref)
 
 Fixed::Fixed(int const toConvert)
 {
-	std::cout << "TEST : " << toConvert << std::endl;
 	this->_nbr = toConvert << this->_bpp;
 	std::cout << "Int contructor called" << std::endl;
 }
 
 Fixed::Fixed(float const toConvert)
 {
+	float temp = toConvert;
+	std::cout << "TEST : " << temp << std::endl;
+	temp *= (2 * 8);
+	std::cout << "TEST : " << temp << std::endl;
+	temp /= (2 * 8);
+	std::cout << "TEST : " << temp << std::endl;
+//	this->_nbr = toConvert << this->_bpp;
 	std::cout << "Float contructor called" << std::endl;
 }
 
@@ -39,7 +45,7 @@ Fixed&	Fixed::operator=(Fixed const& other)
 int	Fixed::getRawBits(void) const
 {
 //	std::cout << "getRawBits member function called" << std::endl;
-	return(this->_nbr);
+	return(this->_nbr/* >> this->_bpp*/);
 }
 
 void	Fixed::setRawBits(int const raw)
@@ -59,6 +65,6 @@ int	Fixed::toInt(void) const
 
 std::ostream&	operator<<(std::ostream& stream, Fixed const& fixed)
 {
-	stream << fixed.getRawBits();
+	stream << (fixed.toInt());
 	return(stream);
 }
