@@ -25,6 +25,8 @@ class Fixed
 		Fixed&	operator=(Fixed const& rhs);
 		Fixed&	operator++(void);
 		Fixed	operator++(int toConvert);
+		Fixed&	operator--(void);
+		Fixed	operator--(int toConvert);
 		~Fixed();
 		int	getRawBits(void) const;
 		void	setRawBits(int const raw);

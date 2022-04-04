@@ -89,6 +89,21 @@ Fixed	Fixed::operator++(int toConvert)
 	return (temp);
 }
 
+Fixed&	Fixed::operator--(void)
+{
+	this->_nbr--;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int toConvert)
+{
+	(void)toConvert;
+	Fixed temp;
+	temp._nbr = this->_nbr;
+	this->_nbr--;
+	return (temp);
+}
+
 Fixed&	Fixed::operator=(Fixed const& rhs)
 {
 	this->_nbr = rhs.getRawBits();
