@@ -19,13 +19,7 @@ Fixed::Fixed(int const toConvert)
 
 Fixed::Fixed(float const toConvert)
 {
-	float temp = toConvert;
-	std::cout << "TEST : " << temp << std::endl;
-	temp *= (2 * 8);
-	std::cout << "TEST : " << temp << std::endl;
-	temp /= (2 * 8);
-	std::cout << "TEST : " << temp << std::endl;
-//	this->_nbr = toConvert << this->_bpp;
+	this->_nbr = round(toConvert * (1 << 8));
 	std::cout << "Float contructor called" << std::endl;
 }
 
@@ -35,17 +29,16 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed&	Fixed::operator=(Fixed const& other)
+Fixed&	Fixed::operator=(Fixed const& rhs)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_nbr = other.getRawBits();
+	this->_nbr = rhs.getRawBits();
 	return (*this);
 }
 
 int	Fixed::getRawBits(void) const
 {
-//	std::cout << "getRawBits member function called" << std::endl;
-	return(this->_nbr/* >> this->_bpp*/);
+	return(this->_nbr);
 }
 
 void	Fixed::setRawBits(int const raw)
@@ -56,6 +49,7 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
+	return ((float)this->_nbr / (float)( 1 << this->_bpp));
 }
 
 int	Fixed::toInt(void) const
@@ -65,6 +59,6 @@ int	Fixed::toInt(void) const
 
 std::ostream&	operator<<(std::ostream& stream, Fixed const& fixed)
 {
-	stream << (fixed.toInt());
+	stream << (fixed.toFloat());
 	return(stream);
 }
