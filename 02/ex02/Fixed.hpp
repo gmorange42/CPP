@@ -27,6 +27,10 @@ class Fixed
 		Fixed	operator++(int toConvert);
 		Fixed&	operator--(void);
 		Fixed	operator--(int toConvert);
+		static Fixed	min(Fixed const& a, Fixed const& b);
+		static Fixed	min(Fixed& a, Fixed& b);
+		static Fixed	max(Fixed const& a, Fixed const& b);
+		static Fixed	max(Fixed& a, Fixed& b);
 		~Fixed();
 		int	getRawBits(void) const;
 		void	setRawBits(int const raw);

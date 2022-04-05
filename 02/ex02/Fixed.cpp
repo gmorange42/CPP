@@ -130,6 +130,34 @@ int	Fixed::toInt(void) const
 	return (this->_nbr >> this->_bpp);
 }
 
+Fixed	Fixed::min(Fixed const& a, Fixed const& b)
+{
+	if (a.getRawBits() <= b.getRawBits())
+		return (a);
+	return (b);
+}
+
+Fixed	Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a.getRawBits() <= b.getRawBits())
+		return (a);
+	return (b);
+}
+
+Fixed	Fixed::max(Fixed const& a, Fixed const& b)
+{
+	if (a.getRawBits() >= b.getRawBits())
+		return (a);
+	return (b);
+}
+
+Fixed	Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a.getRawBits() >= b.getRawBits())
+		return (a);
+	return (b);
+}
+
 std::ostream&	operator<<(std::ostream& stream, Fixed const& fixed)
 {
 	stream << (fixed.toFloat());
