@@ -24,9 +24,9 @@ class Fixed
 		Fixed	operator/(Fixed const& rhs);
 		Fixed&	operator=(Fixed const& rhs);
 		Fixed&	operator++(void);
-		Fixed	operator++(int toConvert);
+		Fixed	operator++(int);
 		Fixed&	operator--(void);
-		Fixed	operator--(int toConvert);
+		Fixed	operator--(int);
 		static Fixed	min(Fixed const& a, Fixed const& b);
 		static Fixed	min(Fixed& a, Fixed& b);
 		static Fixed	max(Fixed const& a, Fixed const& b);

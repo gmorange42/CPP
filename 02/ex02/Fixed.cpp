@@ -80,9 +80,8 @@ Fixed&	Fixed::operator++(void)
 	return (*this);
 }
 
-Fixed	Fixed::operator++(int toConvert)
+Fixed	Fixed::operator++(int)
 {
-	(void)toConvert;
 	Fixed temp;
 	temp._nbr = this->_nbr;
 	this->_nbr++;
@@ -95,9 +94,8 @@ Fixed&	Fixed::operator--(void)
 	return (*this);
 }
 
-Fixed	Fixed::operator--(int toConvert)
+Fixed	Fixed::operator--(int)
 {
-	(void)toConvert;
 	Fixed temp;
 	temp._nbr = this->_nbr;
 	this->_nbr--;
@@ -127,7 +125,7 @@ float	Fixed::toFloat(void) const
 
 int	Fixed::toInt(void) const
 {
-	return (this->_nbr >> this->_bpp);
+	return (this->_nbr / ( 1 << this->_bpp));
 }
 
 Fixed	Fixed::min(Fixed const& a, Fixed const& b)

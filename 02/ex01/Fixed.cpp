@@ -54,7 +54,7 @@ float	Fixed::toFloat(void) const
 
 int	Fixed::toInt(void) const
 {
-	return (this->_nbr >> this->_bpp);
+	return (this->_nbr / ( 1 << this->_bpp));
 }
 
 std::ostream&	operator<<(std::ostream& stream, Fixed const& fixed)
