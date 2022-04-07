@@ -18,8 +18,8 @@ class ClapTrap
 		unsigned int	getAttackDamage(void) const;
 	protected:
 		std::string	_name;
-		int		_hit;
-		int		_energiePoints;
+		int		_hitPoints;
+		int		_energyPoints;
 		int		_attackDamage;
 };
 

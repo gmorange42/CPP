@@ -5,8 +5,8 @@ int	main(void)
 {
 	std::cout << "--CONSTRUCTORS--" << std::endl << std::endl;
 
-	ScavTrap bender("Bender");
 	ClapTrap calculon("Calculon");
+	ScavTrap bender("Bender");
 
 	std::cout << std::endl << "--BATTLE--" << std::endl << std::endl;
 
