@@ -18,6 +18,20 @@ ScavTrap::ScavTrap(std::string name)
 	std::cout << "ScavTrap overload constructor with name called" << std::endl;
 }
 
+ScavTrap::ScavTrap(ScavTrap const& ref)
+{
+	*this = ref;
+}
+
+ScavTrap&	ScavTrap::operator=(ScavTrap const& rhs)
+{
+	this->_name = rhs._name;
+	this->_hitPoints = rhs._hitPoints;
+	this->_energyPoints = rhs._energyPoints;
+	this->_attackDamage = rhs._attackDamage;
+	return (*this);
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;

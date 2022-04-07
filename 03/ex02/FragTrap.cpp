@@ -18,6 +18,20 @@ FragTrap::FragTrap(std::string name)
 	std::cout << "FragTrap overload constructor with name called" << std::endl;
 }
 
+FragTrap::FragTrap(FragTrap const& ref)
+{
+	*this = ref;
+}
+
+FragTrap&	FragTrap::operator=(FragTrap const& rhs)
+{
+	this->_name = rhs._name;
+	this->_hitPoints = rhs._hitPoints;
+	this->_energyPoints = rhs._energyPoints;
+	this->_attackDamage = rhs._attackDamage;
+	return (*this);
+}
+
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
