@@ -8,10 +8,13 @@ class Cat : public Animal
 {
 	public:
 		Cat();
+		Cat(Cat const& ref);
+		Cat&	operator=(Cat const& rhs);
 		~Cat();
 		void	makeSound(void) const;
+		void	setBrain(int i, std::string str);
 	private:
-		Brain * _brain = new Brain();
+		Brain* _brain;
 };
 
 #endif

@@ -8,10 +8,12 @@ class Dog : public Animal
 {
 	public:
 		Dog();
+		Dog(Dog const& ref);
+		Dog&	operator=(Dog const& rhs);
 		~Dog();
 		void	makeSound(void) const;
 	private:
-		Brain* _brain = new Brain();
+		Brain* _brain;
 };
 
 #endif

@@ -10,7 +10,6 @@ class Brain
 		Brain(Brain const& ref);
 		Brain&	operator=(Brain const& rhs);
 		~Brain();
-	private:
 		std::string	ideas[100];
 };
 
