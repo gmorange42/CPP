@@ -16,14 +16,16 @@ Dog::Dog(Dog const& ref)
 Dog&	Dog::operator=(Dog const& rhs)
 {
 	this->_type = rhs._type;
-	delete this->_brain;
-	this->_brain = new Brain();
+//	delete this->_brain;
+//	this->_brain = new Brain();
+	this->_brain = rhs._brain;
 	return (*this);
 }
 
 Dog::~Dog()
 {
-	delete _brain;
+//	if (this->_brain)
+		delete this->_brain;
 	std::cout << "Destructor (Dog class)." << std::endl;
 }
 

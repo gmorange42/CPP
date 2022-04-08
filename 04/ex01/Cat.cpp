@@ -16,14 +16,16 @@ Cat::Cat(Cat const& ref)
 Cat&	Cat::operator=(Cat const& rhs)
 {
 	this->_type = rhs._type;
-	delete this->_brain;
-	this->_brain = new Brain();
+//	delete this->_brain;
+//	this->_brain = new Brain();
+	this->_brain = rhs._brain;
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	delete _brain;
+	if (this->_brain)
+		delete this->_brain;
 	std::cout << "Destructor (Cat class)." << std::endl;
 }
 
