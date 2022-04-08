@@ -22,3 +22,13 @@ Brain::~Brain(void)
 {
 	std::cout << "Destructor (Brain class)." << std::endl;
 }
+
+void	Brain::setIdea(int i, std::string str)
+{
+	this->ideas[i] = str;
+}
+
+std::string	Brain::getIdea(int i)
+{
+	return (ideas[i]);
+}

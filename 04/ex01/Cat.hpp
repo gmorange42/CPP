@@ -12,7 +12,8 @@ class Cat : public Animal
 		Cat&	operator=(Cat const& rhs);
 		~Cat();
 		void	makeSound(void) const;
-		void	setBrain(int i, std::string str);
+		void	setIdea(int i, std::string str);
+		std::string	getIdea(int i);
 	private:
 		Brain* _brain;
 };

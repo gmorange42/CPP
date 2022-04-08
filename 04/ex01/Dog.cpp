@@ -16,15 +16,14 @@ Dog::Dog(Dog const& ref)
 Dog&	Dog::operator=(Dog const& rhs)
 {
 	this->_type = rhs._type;
-//	delete this->_brain;
-//	this->_brain = new Brain();
-	this->_brain = rhs._brain;
+	this->_brain = new Brain();
+	*this->_brain = *rhs._brain;
 	return (*this);
 }
 
 Dog::~Dog()
 {
-//	if (this->_brain)
+	if (this->_brain)
 		delete this->_brain;
 	std::cout << "Destructor (Dog class)." << std::endl;
 }
@@ -32,4 +31,14 @@ Dog::~Dog()
 void	Dog::makeSound(void) const
 {
 	std::cout << ("Woof!") << std::endl;
+}
+
+void	Dog::setIdea(int i, std::string str)
+{
+	this->_brain->setIdea(i, str);
+}
+
+std::string	Dog::getIdea(int i)
+{
+	return (this->_brain->ideas[i]);
 }

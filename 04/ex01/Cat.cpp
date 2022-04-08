@@ -16,9 +16,8 @@ Cat::Cat(Cat const& ref)
 Cat&	Cat::operator=(Cat const& rhs)
 {
 	this->_type = rhs._type;
-//	delete this->_brain;
-//	this->_brain = new Brain();
-	this->_brain = rhs._brain;
+	this->_brain = new Brain();
+	*this->_brain = *rhs._brain;
 	return (*this);
 }
 
@@ -34,7 +33,12 @@ void	Cat::makeSound(void) const
 	std::cout << ("Meow...") << std::endl;
 }
 
-void	Cat::setBrain(int i, std::string str)
+void	Cat::setIdea(int i, std::string str)
 {
-	this->_brain->ideas[i] = str;
+	this->_brain->setIdea(i, str);
+}
+
+std::string	Cat::getIdea(int i)
+{
+	return (this->_brain->ideas[i]);
 }
