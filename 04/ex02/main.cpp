@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "WrongAnimal.hpp"
@@ -9,8 +9,8 @@ int	main(void)
 {
 	std::cout << "--CONSTRUCTORS--" << std::endl << std::endl;
 
-	Animal	animal;
-	Animal*	metab[4];
+//	AAnimal	animal; // Does not compile
+	AAnimal*	metab[4];
 	for (int i = 0; i < 2; i++)
 	{
 		std::cout << "Construction of metab[" << i << "]." << std::endl;
@@ -32,8 +32,8 @@ int	main(void)
 
 	std::cout << std::endl << "--TESTS--" << std::endl << std::endl;
 
-	std::cout << "animal: " << animal.getType() << std::endl;
-	animal.makeSound();
+//	std::cout << "animal: " << animal.getType() << std::endl;
+//	animal.makeSound();
 	std::cout << "dog: " << dog->getType() << std::endl;
 	dog->makeSound();
 	std::cout << "cat: " << cat->getType() << std::endl;

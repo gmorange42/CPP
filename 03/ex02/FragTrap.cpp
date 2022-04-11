@@ -39,11 +39,15 @@ FragTrap::~FragTrap()
 
 void	FragTrap::attack(const std::string& target)
 {	
-	this->_energyPoints--;
-	std::cout << this->_name << " attacks with a baseball bat " << target << ", causing " << this->_attackDamage << " points of damage! " << this->_energyPoints << " points of energys left." << std::endl;
+	if (this->_energyPoints > 0 && this->_hitPoints > 0)
+	{
+		this->_energyPoints--;
+		std::cout << this->_name << " attacks with a baseball bat " << target << ", causing " << this->_attackDamage << " points of damage! " << this->_energyPoints << " points of energys left." << std::endl;
+	}
 }
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << this->_name << " says \"Hey ! Give me a high fives Dude !\"" << std::endl;
+	if (this->_energyPoints > 0 && this->_hitPoints > 0)
+		std::cout << this->_name << " says \"Hey ! Give me a high fives Dude !\"" << std::endl;
 }

@@ -39,11 +39,15 @@ ScavTrap::~ScavTrap()
 
 void	ScavTrap::attack(const std::string& target)
 {	
-	this->_energyPoints--;
-	std::cout << this->_name << " attacks with a microwave " << target << ", causing " << this->_attackDamage << " points of damage! " << this->_energyPoints << " points of energys left." << std::endl;
+	if (this->_energyPoints > 0 && this->_hitPoints > 0)
+	{
+		this->_energyPoints--;
+		std::cout << this->_name << " attacks with a microwave " << target << ", causing " << this->_attackDamage << " points of damage! " << this->_energyPoints << " points of energy left." << std::endl;
+	}
 }
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << this->_name << " is in Gate keeper mode." << std::endl;
+	if (this->_energyPoints > 0 && this->_hitPoints > 0)
+		std::cout << this->_name << " is in Gate keeper mode." << std::endl;
 }

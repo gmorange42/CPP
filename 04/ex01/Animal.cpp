@@ -13,6 +13,7 @@ Animal::Animal(Animal const& ref)
 
 Animal&	Animal::operator=(Animal const& rhs)
 {
+	std::cout << "Copy assignment operator (Animal class)" << std::endl;
 	this->_type = rhs._type;
 	return (*this);
 }
