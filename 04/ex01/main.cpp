@@ -26,8 +26,10 @@ int	main(void)
 
 	Cat* cat = new Cat();
 	Cat* copy_cat = new Cat(*cat);
+
 	Dog* dog = new Dog();
-	Dog* copy_dog = new Dog(*dog);
+	Dog* copy_dog = new Dog();
+	*copy_dog = *dog;
 
 
 	std::cout << std::endl << "--TESTS--" << std::endl << std::endl;

@@ -9,8 +9,8 @@ class Dog : public Animal
 		Dog();
 		Dog(Dog const& ref);
 		Dog&	operator=(Dog const& rhs);
-		~Dog();
-		void	makeSound(void) const;
+		virtual	~Dog();
+		virtual void	makeSound(void) const;
 };
 
 #endif

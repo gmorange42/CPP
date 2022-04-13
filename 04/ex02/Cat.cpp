@@ -16,6 +16,8 @@ Cat::Cat(Cat const& ref)
 Cat&	Cat::operator=(Cat const& rhs)
 {
 	std::cout << "Copy assignment operator (Cat class)" << std::endl;
+	if (this->_brain)
+		delete this->_brain;
 	this->_type = rhs._type;
 	this->_brain = new Brain();
 	*this->_brain = *rhs._brain;

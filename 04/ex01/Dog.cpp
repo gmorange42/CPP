@@ -16,6 +16,8 @@ Dog::Dog(Dog const& ref)
 Dog&	Dog::operator=(Dog const& rhs)
 {
 	std::cout << "Copy assignment operator (Dog class)" << std::endl;
+	if (this->_brain)
+		delete this->_brain;
 	this->_type = rhs._type;
 	this->_brain = new Brain();
 	*this->_brain = *rhs._brain;

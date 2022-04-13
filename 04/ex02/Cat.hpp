@@ -10,8 +10,8 @@ class Cat : public AAnimal
 		Cat();
 		Cat(Cat const& ref);
 		Cat&	operator=(Cat const& rhs);
-		~Cat();
-		void	makeSound(void) const;
+		virtual	~Cat();
+		virtual	void	makeSound(void) const;
 		void	setIdea(int i, std::string str);
 		std::string	getIdea(int i);
 	private:

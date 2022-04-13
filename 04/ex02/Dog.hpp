@@ -10,8 +10,8 @@ class Dog : public AAnimal
 		Dog();
 		Dog(Dog const& ref);
 		Dog&	operator=(Dog const& rhs);
-		~Dog();
-		void	makeSound(void) const;
+		virtual	~Dog();
+		virtual	void	makeSound(void) const;
 		void	setIdea(int i, std::string str);
 		std::string	getIdea(int i);
 	private:
