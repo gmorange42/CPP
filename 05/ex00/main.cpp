@@ -2,6 +2,10 @@
 
 int main(void)
 {
-	Bureaucrat bureaucrat;
-	return (0);
+	Bureaucrat bureaucrat("Louis", 1);
+	std::cout << bureaucrat << std::endl;
+	bureaucrat.upGrade();
+	bureaucrat.upGrade();
+	std::cout << bureaucrat << std::endl;
+	return(0);
 }

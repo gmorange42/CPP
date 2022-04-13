@@ -2,22 +2,26 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
-#include <exception>
 #include <string>
 
-class Bureaucrat
+class	Bureaucrat
 {
 	public:
-		Bureaucrat();
-		Bureaucrat(std::string name, int grade);
+		Bureaucrat(void);
+		Bureaucrat(std::string	name, int grade);
 		Bureaucrat(Bureaucrat const& ref);
 		Bureaucrat&	operator=(Bureaucrat const& rhs);
-		~Bureaucrat();
+		~Bureaucrat(void);
 		std::string	getName(void) const;
-		unsigned int	getGrade(void) const;
+		int		getGrade(void) const;
+		void		upGrade(void);
+		void		downGrade(void);
+
 	private:
 		std::string	_name;
-		unsigned int	_grade;
+		int		_grade;
 };
+
+std::ostream&	operator<<(std::ostream& o, Bureaucrat const& rhs);
 
 #endif
