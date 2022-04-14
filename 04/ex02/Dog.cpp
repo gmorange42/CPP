@@ -10,6 +10,7 @@ Dog::Dog()
 Dog::Dog(Dog const& ref)
 {
 	std::cout << "Constructor by copy (Dog class)." << std::endl;
+	this->_brain = NULL;
 	*this = ref;
 }
 

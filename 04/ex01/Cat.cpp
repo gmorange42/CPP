@@ -10,6 +10,7 @@ Cat::Cat()
 Cat::Cat(Cat const& ref)
 {
 	std::cout << "Constructor by copy (Cat class)." << std::endl;
+	this->_brain = NULL;
 	*this = ref;
 }
 
