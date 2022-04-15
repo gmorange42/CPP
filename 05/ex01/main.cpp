@@ -1,4 +1,5 @@
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
@@ -40,5 +41,11 @@ int main(void)
 	std::cout << "DownGrade called" << std::endl;
 	warden.downGrade();
 	std::cout << warden << std::endl;
+	
+	Form form1("A38", 14, 1);
+	form1.beSigned(morgan);
+	form1.beSigned(warden);
+	std::cout << form1 <<std::endl;
+
 	return(0);
 }
