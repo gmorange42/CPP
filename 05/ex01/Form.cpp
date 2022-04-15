@@ -4,8 +4,13 @@ Form::Form(void) : _name("A38"), _signature(false), _gradeToSign(0), _gradeToExe
 {
 }
 
-Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name("A38"), _signature(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
+Form::Form(std::string name, int gradeToSign, int gradeToExec) : _name(name), _signature(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
+	if (this->_gradeToSign > 150 or this->_gradeToExec > 150)
+		throw(GradeTooLowException());
+	if (this->_gradeToSign < 1 or this->_gradeToExec < 1)
+		throw(GradeTooHighException());
+	std::cout << "New Form ! [" << this->_name << "] is created." << std::endl;
 }
 
 Form::Form(Form const& ref) : _name(ref._name), _gradeToSign(ref._gradeToSign), _gradeToExec(ref._gradeToExec)
@@ -21,6 +26,7 @@ Form&	Form::operator=(Form const& rhs)
 
 Form::~Form(void)
 {
+	std::cout << this->_name << " is thrown in the trash." << std::endl;
 }
 
 std::string	Form::getName(void) const
@@ -45,22 +51,20 @@ int	Form::getGradeToExec(void) const
 
 void	Form::beSigned(Bureaucrat const& bureaucrat)
 {
-	try
-	{
-		if (bureaucrat.getGrade() > this->_gradeToSign)
-			throw(GradeTooLowException());
-		if (!this->_signature)
-			this->_signature = true;
-	}
-	catch (GradeTooLowException& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (bureaucrat.getGrade() > this->_gradeToSign)
+		throw(GradeTooLowException());
+	if (!this->_signature)
+		this->_signature = true;
 }
 
 const char*	Form::GradeTooLowException::what(void) const throw()
 {
-	return ("test pouet pouet");
+	return ("Grade required too low.");
+}
+
+const char*	Form::GradeTooHighException::what(void) const throw()
+{
+	return ("Grade required too high.");
 }
 
 std::ostream&	operator<<(std::ostream& o, Form const& rhs)
@@ -74,6 +78,6 @@ std::ostream&	operator<<(std::ostream& o, Form const& rhs)
 	o << rhs.getGradeToSign();
 	o << "] [grade required to execute : ";
 	o << rhs.getGradeToExec();
-	o << "]." << std::endl;
+	o << "].";
 	return (o);
 }

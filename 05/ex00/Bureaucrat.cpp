@@ -6,23 +6,11 @@ Bureaucrat::Bureaucrat(void) : _name("Warden"), _grade(75)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-	try
-	{
-		if (this->_grade > 150)
-			throw (GradeTooLowException());
-		if (this->_grade < 1)
-			throw (GradeTooHighException());
-	}
-	catch (GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-		this->_grade = 150;
-	}
-	catch (GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-		this->_grade = 1;
-	}
+	if (this->_grade > 150)
+		throw (GradeTooLowException());
+	if (this->_grade < 1)
+		throw (GradeTooHighException());
+	std::cout << this->_name << " is hired at grade " << this->_grade << "." << std::endl;
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const& ref)
@@ -39,17 +27,18 @@ Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& rhs)
 
 Bureaucrat::~Bureaucrat(void)
 {
+	std::cout << this->_name << " is fired." << std::endl;
 }
 
 const char*	Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade too low, new grade -> 150.");
+	return ("Grade too low.");
 }
 
 const char*	Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 
-	return ("Grade too high, new grade -> 1.");
+	return ("Grade too high.");
 }
 
 std::string	Bureaucrat::getName(void) const
@@ -64,32 +53,18 @@ int		Bureaucrat::getGrade(void) const
 
 void	Bureaucrat::upGrade(void)
 {
+	std::cout << _name << " try to upgrade." << std::endl;
 	this->_grade--;
-	try
-	{
-		if (this->_grade < 1)
-			throw (GradeTooHighException());
-	}
-	catch (GradeTooHighException &e)
-	{
-		std::cout << e.what() << std::endl;
-		this->_grade = 1;
-	}
+	if (this->_grade < 1)
+		throw (GradeTooHighException());
 }
 
 void	Bureaucrat::downGrade(void)
 {
+	std::cout << _name << " try to downgrade." << std::endl;
 	this->_grade++;
-	try
-	{
-		if (this->_grade > 150)
-			throw (GradeTooLowException());
-	}
-	catch (GradeTooLowException &e)
-	{
-		std::cout << e.what() << std::endl;
-		this->_grade = 150;
-	}
+	if (this->_grade > 150)
+		throw (GradeTooLowException());
 }
 
 std::ostream&	operator<<(std::ostream& o, Bureaucrat const& rhs)

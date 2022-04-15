@@ -3,49 +3,79 @@
 
 int main(void)
 {
-	std::cout << "--HERMES--" << std::endl;
-	Bureaucrat hermes("Hermes", 151);
-	std::cout << hermes << std::endl;
-	std::cout << "DownGrade called" << std::endl;
-	hermes.downGrade();
-	std::cout << hermes << std::endl;
-	std::cout << "DownGrade called" << std::endl;
-	hermes.downGrade();
-	std::cout << hermes << std::endl;
-	std::cout << "UpGrade called" << std::endl;
-	hermes.upGrade();
-	std::cout << hermes << std::endl << std::endl;
+	try
+	{
+		Bureaucrat	hermes("Hermes", 76);
+		std::cout << hermes << std::endl;
+		Form	form75("Form75", 75, 75);
+		std::cout << form75 << std::endl;
+		hermes.signForm(form75);
+		std::cout << form75 << std::endl;
+		hermes.signForm(form75);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
 
-	std::cout << std::endl << "--MORGAN--" << std::endl;
-	Bureaucrat morgan("Morgan", 0);
-	std::cout << morgan << std::endl;
-	std::cout << "UpGrade called" << std::endl;
-	morgan.upGrade();
-	std::cout << morgan << std::endl;
-	std::cout << "DownGrade called" << std::endl;
-	morgan.downGrade();
-	std::cout << morgan << std::endl;
-	std::cout << "DownGrade called" << std::endl;
-	morgan.downGrade();
-	std::cout << morgan << std::endl << std::endl;
+	try
+	{
+		Bureaucrat	morgan("Morgan", 16);
+		std::cout << morgan << std::endl;
+		Form	form42("Form42", 42, 42);
+		std::cout << form42 << std::endl;
+		morgan.signForm(form42);
+		std::cout << form42 << std::endl;
+		morgan.signForm(form42);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
 
-	std::cout << std::endl << "--WARDEN--" << std::endl;
-	Bureaucrat warden;
-	std::cout << warden << std::endl;
-	std::cout << "UpGrade called" << std::endl;
-	warden.upGrade();
-	std::cout << warden << std::endl;
-	std::cout << "DownGrade called" << std::endl;
-	warden.downGrade();
-	std::cout << warden << std::endl;
-	std::cout << "DownGrade called" << std::endl;
-	warden.downGrade();
-	std::cout << warden << std::endl;
+	try
+	{
+		std::cout <<"--FORM TO SIGN GRADE TOO LOW--" << std::endl;
+		Form	form151("Form151", 151, 1);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		std::cout <<"--FORM TO SIGN GRADE TOO HIGH--" << std::endl;
+		Form	form0("Form0", 0, 1);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
 	
-	Form form1("A38", 14, 1);
-	form1.beSigned(morgan);
-	form1.beSigned(warden);
-	std::cout << form1 <<std::endl;
+	try
+	{
+		std::cout <<"--FORM TO EXECUTE GRADE TOO LOW--" << std::endl;
+		Form	form151("Form151", 1, 151);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
 
+	try
+	{
+		std::cout <<"--FORM TO EXECUTE GRADE TOO HIGH--" << std::endl;
+		Form	form0("Form0", 1, 0);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return(0);
 }
