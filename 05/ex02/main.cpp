@@ -1,91 +1,195 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void)
 {
+	std::cout << "--SHRUBBERY PART--" << std::endl;
 	try
 	{
-		ShrubberyCreationForm arbuste("Form145", "test");
+		Bureaucrat hermes("Hermes", 150 );
+		ShrubberyCreationForm arbuste("Tree");
 		std::cout << arbuste << std::endl;
+		hermes.signForm(arbuste);
+		std::cout << arbuste << std::endl;
+		arbuste.execute(hermes);
 	}
 	catch (std::exception & e)
 	{
 		std::cout <<  e.what() << std::endl;
 	}
-//	try
-//	{
-//		Bureaucrat	hermes("Hermes", 76);
-//		std::cout << hermes << std::endl;
-//		Form	form75("Form75", 75, 75);
-//		std::cout << form75 << std::endl;
-//		hermes.signForm(form75);
-//		std::cout << form75 << std::endl;
-//		hermes.signForm(form75);
-//	}
-//	catch (std::exception& e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
-//	std::cout << std::endl;
-//
-//	try
-//	{
-//		Bureaucrat	morgan("Morgan", 16);
-//		std::cout << morgan << std::endl;
-//		Form	form42("Form42", 42, 42);
-//		std::cout << form42 << std::endl;
-//		morgan.signForm(form42);
-//		std::cout << form42 << std::endl;
-//		morgan.signForm(form42);
-//	}
-//	catch (std::exception& e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
-//	std::cout << std::endl;
-//
-//	try
-//	{
-//		std::cout <<"--FORM TO SIGN GRADE TOO LOW--" << std::endl;
-//		Form	form151("Form151", 151, 1);
-//	}
-//	catch (std::exception& e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
-//	std::cout << std::endl;
-//
-//	try
-//	{
-//		std::cout <<"--FORM TO SIGN GRADE TOO HIGH--" << std::endl;
-//		Form	form0("Form0", 0, 1);
-//	}
-//	catch (std::exception& e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
-//	std::cout << std::endl;
-//	
-//	try
-//	{
-//		std::cout <<"--FORM TO EXECUTE GRADE TOO LOW--" << std::endl;
-//		Form	form151("Form151", 1, 151);
-//	}
-//	catch (std::exception& e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
-//	std::cout << std::endl;
-//
-//	try
-//	{
-//		std::cout <<"--FORM TO EXECUTE GRADE TOO HIGH--" << std::endl;
-//		Form	form0("Form0", 1, 0);
-//	}
-//	catch (std::exception& e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 140);
+		ShrubberyCreationForm arbuste("Tree");
+		std::cout << arbuste << std::endl;
+		hermes.signForm(arbuste);
+		std::cout << arbuste << std::endl;
+		arbuste.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 137);
+		ShrubberyCreationForm arbuste("Tree");
+		std::cout << arbuste << std::endl;
+//		hermes.signForm(arbuste);
+		std::cout << arbuste << std::endl;
+		arbuste.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 137);
+		ShrubberyCreationForm arbuste("Tree");
+		std::cout << arbuste << std::endl;
+		hermes.signForm(arbuste);
+		std::cout << arbuste << std::endl;
+		arbuste.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+
+	std::cout << std::endl << "--ROBOTOMY PART--" << std::endl;
+	try
+	{
+		Bureaucrat hermes("Hermes", 70 );
+		RobotomyRequestForm robot("Bender");
+		std::cout << robot << std::endl;
+		hermes.signForm(robot);
+		std::cout << robot << std::endl;
+		robot.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 50);
+		RobotomyRequestForm robot("Bender");
+		std::cout << robot << std::endl;
+		hermes.signForm(robot);
+		std::cout << robot << std::endl;
+		robot.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 40);
+		RobotomyRequestForm robot("Bender");
+		std::cout << robot << std::endl;
+//		hermes.signForm(robot);
+		std::cout << robot << std::endl;
+		robot.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 40);
+		RobotomyRequestForm robot("Bender");
+		std::cout << robot << std::endl;
+		hermes.signForm(robot);
+		std::cout << robot << std::endl;
+		robot.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+
+
+	std::cout << std::endl << "--PRESIDENTIAL PART--" << std::endl;
+	try
+	{
+		Bureaucrat hermes("Hermes", 30 );
+		PresidentialPardonForm pardon("Bender");
+		std::cout << pardon << std::endl;
+		hermes.signForm(pardon);
+		std::cout << pardon << std::endl;
+		pardon.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 20);
+		PresidentialPardonForm pardon("Bender");
+		std::cout << pardon << std::endl;
+		hermes.signForm(pardon);
+		std::cout << pardon << std::endl;
+		pardon.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 3);
+		PresidentialPardonForm pardon("Bender");
+		std::cout << pardon << std::endl;
+//		hermes.signForm(pardon);
+		std::cout << pardon << std::endl;
+		pardon.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
+
+	try
+	{
+		Bureaucrat hermes("Hermes", 3);
+		PresidentialPardonForm pardon("Bender");
+		std::cout << pardon << std::endl;
+		hermes.signForm(pardon);
+		std::cout << pardon << std::endl;
+		pardon.execute(hermes);
+	}
+	catch (std::exception & e)
+	{
+		std::cout <<  e.what() << std::endl;
+	}
+	std::cout << std::endl;
 	return(0);
 }

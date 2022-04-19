@@ -4,10 +4,18 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, std::string target) : Form(name, target, 145, 137 )
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("Shrubbery", target, 145, 137 )
 {
 	std::cout << "New ShrubberyCreationForm ! [" << this->_name << "] is created." << std::endl;
-	std::ofstream outfile(target + "_shrubbery");
+}
+
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+	if (!this->_signature)
+		throw (NoSignatureException());
+	if (executor.getGrade() > this->_gradeToExec)
+		throw (GradeTooLowException());
+	std::ofstream outfile(this->_target + "_shrubbery");
 	outfile.exceptions(std::ofstream::badbit | std::ofstream::failbit);
 	outfile << "	      _{\\ _{\\{\\/}/}/}__ " << std::endl;
 	outfile << "             {/{/\\}{/{/\\}(\\}{/\\} _" << std::endl;

@@ -6,7 +6,6 @@ Form::Form(void) : _name("A"), _signature(false), _gradeToSign(1), _gradeToExec(
 
 Form::Form(std::string name, std::string target, int gradeToSign, int gradeToExec) : _name(name), _target(target), _signature(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec)
 {
-	std::cout << "New Form ! [" << this->_name << "] is created." << std::endl;
 }
 
 Form::Form(Form const& ref) : _name(ref._name), _gradeToSign(ref._gradeToSign), _gradeToExec(ref._gradeToExec)
@@ -22,7 +21,6 @@ Form&	Form::operator=(Form const& rhs)
 
 Form::~Form(void)
 {
-	std::cout << this->_name << " is thrown in the trash." << std::endl;
 }
 
 std::string	Form::getName(void) const
@@ -61,6 +59,11 @@ const char*	Form::GradeTooLowException::what(void) const throw()
 const char*	Form::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade required too high.");
+}
+
+const char*	Form::NoSignatureException::what(void) const throw()
+{
+	return ("The form is not signed.");
 }
 
 std::ostream&	operator<<(std::ostream& o, Form const& rhs)
