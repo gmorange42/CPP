@@ -10,11 +10,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 150 );
-		ShrubberyCreationForm arbuste("Tree");
-		std::cout << arbuste << std::endl;
-		hermes.signForm(arbuste);
-		std::cout << arbuste << std::endl;
-		arbuste.execute(hermes);
+		ShrubberyCreationForm little_tree("Tree");
+		std::cout << little_tree << std::endl;
+		hermes.signForm(little_tree);
+		std::cout << little_tree << std::endl;
+		hermes.executeForm(little_tree);
 	}
 	catch (std::exception & e)
 	{
@@ -25,11 +25,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 140);
-		ShrubberyCreationForm arbuste("Tree");
-		std::cout << arbuste << std::endl;
-		hermes.signForm(arbuste);
-		std::cout << arbuste << std::endl;
-		arbuste.execute(hermes);
+		ShrubberyCreationForm little_tree("Tree");
+		std::cout << little_tree << std::endl;
+		hermes.signForm(little_tree);
+		std::cout << little_tree << std::endl;
+		hermes.executeForm(little_tree);
 	}
 	catch (std::exception & e)
 	{
@@ -40,11 +40,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 137);
-		ShrubberyCreationForm arbuste("Tree");
-		std::cout << arbuste << std::endl;
-//		hermes.signForm(arbuste);
-		std::cout << arbuste << std::endl;
-		arbuste.execute(hermes);
+		ShrubberyCreationForm little_tree("Tree");
+		std::cout << little_tree << std::endl;
+//		hermes.signForm(little_tree);
+		std::cout << little_tree << std::endl;
+		hermes.executeForm(little_tree);
 	}
 	catch (std::exception & e)
 	{
@@ -55,11 +55,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 137);
-		ShrubberyCreationForm arbuste("Tree");
-		std::cout << arbuste << std::endl;
-		hermes.signForm(arbuste);
-		std::cout << arbuste << std::endl;
-		arbuste.execute(hermes);
+		ShrubberyCreationForm little_tree("Tree");
+		std::cout << little_tree << std::endl;
+		hermes.signForm(little_tree);
+		std::cout << little_tree << std::endl;
+		hermes.executeForm(little_tree);
 	}
 	catch (std::exception & e)
 	{
@@ -72,11 +72,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 70 );
-		RobotomyRequestForm robot("Bender");
+		RobotomyRequestForm robot("Fry");
 		std::cout << robot << std::endl;
 		hermes.signForm(robot);
 		std::cout << robot << std::endl;
-		robot.execute(hermes);
+		hermes.executeForm(robot);
 	}
 	catch (std::exception & e)
 	{
@@ -87,11 +87,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 50);
-		RobotomyRequestForm robot("Bender");
+		RobotomyRequestForm robot("Fry");
 		std::cout << robot << std::endl;
 		hermes.signForm(robot);
 		std::cout << robot << std::endl;
-		robot.execute(hermes);
+		hermes.executeForm(robot);
 	}
 	catch (std::exception & e)
 	{
@@ -102,11 +102,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 40);
-		RobotomyRequestForm robot("Bender");
+		RobotomyRequestForm robot("Fry");
 		std::cout << robot << std::endl;
 //		hermes.signForm(robot);
 		std::cout << robot << std::endl;
-		robot.execute(hermes);
+		hermes.executeForm(robot);
 	}
 	catch (std::exception & e)
 	{
@@ -117,11 +117,11 @@ int main(void)
 	try
 	{
 		Bureaucrat hermes("Hermes", 40);
-		RobotomyRequestForm robot("Bender");
+		RobotomyRequestForm robot("Fry");
 		std::cout << robot << std::endl;
 		hermes.signForm(robot);
 		std::cout << robot << std::endl;
-		robot.execute(hermes);
+		hermes.executeForm(robot);
 	}
 	catch (std::exception & e)
 	{
@@ -139,7 +139,7 @@ int main(void)
 		std::cout << pardon << std::endl;
 		hermes.signForm(pardon);
 		std::cout << pardon << std::endl;
-		pardon.execute(hermes);
+		hermes.executeForm(pardon);
 	}
 	catch (std::exception & e)
 	{
@@ -154,7 +154,7 @@ int main(void)
 		std::cout << pardon << std::endl;
 		hermes.signForm(pardon);
 		std::cout << pardon << std::endl;
-		pardon.execute(hermes);
+		hermes.executeForm(pardon);
 	}
 	catch (std::exception & e)
 	{
@@ -169,7 +169,7 @@ int main(void)
 		std::cout << pardon << std::endl;
 //		hermes.signForm(pardon);
 		std::cout << pardon << std::endl;
-		pardon.execute(hermes);
+		hermes.executeForm(pardon);
 	}
 	catch (std::exception & e)
 	{
@@ -184,7 +184,7 @@ int main(void)
 		std::cout << pardon << std::endl;
 		hermes.signForm(pardon);
 		std::cout << pardon << std::endl;
-		pardon.execute(hermes);
+		hermes.executeForm(pardon);
 	}
 	catch (std::exception & e)
 	{

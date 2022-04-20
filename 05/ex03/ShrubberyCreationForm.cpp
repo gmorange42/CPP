@@ -4,7 +4,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(void)
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("SCF.145.137", target, 145, 137 )
+ShrubberyCreationForm::ShrubberyCreationForm(std::string name, std::string target) : Form(name, target, 145, 137 )
 {
 	std::cout << "New ShrubberyCreationForm ! [" << this->_name << "] is created." << std::endl;
 }

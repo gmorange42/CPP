@@ -4,7 +4,7 @@ RobotomyRequestForm::RobotomyRequestForm(void)
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RRF.72.45", target, 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(std::string name, std::string target) : Form(name, target, 72, 45)
 {
 	std::cout << "New RobotomyRequestForm ! [" << this->_name << "] is created." << std::endl;
 }

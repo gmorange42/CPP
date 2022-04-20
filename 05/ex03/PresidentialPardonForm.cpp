@@ -4,7 +4,7 @@ PresidentialPardonForm::PresidentialPardonForm(void)
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PPF.25.5", target, 25, 5 )
+PresidentialPardonForm::PresidentialPardonForm(std::string name, std::string target) : Form(name, target, 25, 5 )
 {
 	std::cout << "New PresidentialPardonForm ! [" << this->_name << "] is created." << std::endl;
 }
