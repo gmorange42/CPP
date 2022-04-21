@@ -34,12 +34,12 @@ std::string	Intern::convert(std::string name)
 	className += std::toupper(name[0]);
 	for (int i = 1; i < (int)name.size(); i++)
 	{
-		if (name[i] == ' ' and name[i + 1])
+		if (name[i] == ' ' and name[i + 1] and name[i + 1] != ' ')
 		{
 			i++;
 			className += std::toupper(name[i]);
 		}
-		else
+		else if (name [i] != ' ')
 			className += std::tolower(name[i]);
 	}
 	className += "Form";
@@ -75,7 +75,10 @@ Form*	Intern::makeForm(std::string formName, std::string target)
 	for (i = 0; i < 3; i++)
 	{
 		if (classNameTab[i] == this->convert(formName))
+		{
+			std::cout << "Intern creates " << formName << std::endl;
 			break;
+		}
 	}
 	if (i < 3)
 		return((this->*memberTab[i])(formName, target));

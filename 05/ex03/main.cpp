@@ -13,7 +13,7 @@ int main(void)
 		std::cout << std::endl << "--SHRUBBERY--" << std::endl;
 		Intern	someRandomIntern;
 		Bureaucrat hermes("Hermes", 3);
-		scf = someRandomIntern.makeForm("shrubbery creation", "Professor Farnsworth");
+		scf = someRandomIntern.makeForm("shrubbery  creation", "Professor Farnsworth");
 		std::cout << *scf << std::endl;
 		hermes.signForm(*scf);
 		std::cout << *scf << std::endl;
@@ -53,7 +53,7 @@ int main(void)
 		std::cout << std::endl << "--PRESIDENTIAL--" << std::endl;
 		Intern	someRandomIntern;
 		Bureaucrat hermes("Hermes", 3);
-		ppf = someRandomIntern.makeForm("presidential pardon", "Bender");
+		ppf = someRandomIntern.makeForm("presidential pardon", "Zap");
 		std::cout << *ppf << std::endl;
 		hermes.signForm(*ppf);
 		std::cout << *ppf << std::endl;

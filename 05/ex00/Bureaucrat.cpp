@@ -13,14 +13,13 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 	std::cout << this->_name << " is hired at grade " << this->_grade << "." << std::endl;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const& ref)
+Bureaucrat::Bureaucrat(Bureaucrat const& ref) : _name(ref.getName())
 {
 	*this = ref;
 }
 
 Bureaucrat&	Bureaucrat::operator=(Bureaucrat const& rhs)
 {
-	this->_name = rhs._name;
 	this->_grade = rhs._grade;
 	return (*this);
 }
@@ -72,5 +71,6 @@ std::ostream&	operator<<(std::ostream& o, Bureaucrat const& rhs)
 	o << rhs.getName(); 
 	o << ", bureaucrat grade ";
 	o << rhs.getGrade();
+	o << '.';
 	return (o);
 }
