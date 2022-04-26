@@ -1,15 +1,23 @@
-#include <iostream>
-#include <string>
-
-//void	check_type(std::string str)
-//{
-//	for (std::string::iterator it=str.begin(); it!= str.end(); it++)
-//	{
-//		std::cout << *it << std::endl;
-//	}
-//}
+#include "Convert.hpp"
 
 int	main(int ac, char ** av)
 {
+	if (ac != 2)
+	{
+		std::cout << "Only one argument is needed." << std::endl;
+		return (1);
+	}
+	try
+	{
+		Convert convert(av[1]);
+		convert.print_char();
+		convert.print_int();
+		convert.print_float();
+		convert.print_double();
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return (0);
 }
