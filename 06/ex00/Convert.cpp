@@ -28,7 +28,7 @@ void	Convert::print_char(void)
 	std::cout << "char: ";
         if (std::isnan(this->_d) or std::isinf(this->_d))
                 std::cout << "impossible" << std::endl;
-        else if (this->_d < 32 || this->_d > 126)
+	else if (!isprint(static_cast<char>(this->_d)))
                 std::cout << "Non displayable" << std::endl;
         else
                 std::cout << static_cast<char>(this->_d) << std::endl;
