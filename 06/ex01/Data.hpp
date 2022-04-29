@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdint.h>
 
-class Data
+struct Data
 {
 	public:
 		Data(void);

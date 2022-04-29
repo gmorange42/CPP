@@ -6,7 +6,9 @@ int	main(void)
 
 	base = generate();
 
+	std::cout << "[indentify(Base* p)]" << std::endl;
 	identify(base);
+	std::cout << std::endl << "[indentify(Base& p)]" << std::endl;
 	identify(*base);
 
 	delete base;

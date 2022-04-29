@@ -6,7 +6,7 @@ Convert::Convert(std::string str) : _d(atof(str.c_str()))
 {
 	if (!_d and str.size() == 1 and str.c_str()[0] != '0')
 		_d = static_cast<double>(str.c_str()[0]);
-	else if (!_d and str.size() > 1)
+	else if (!_d and str.size() > 1 and str[0] != '0') 
 		throw BadArgument();
 }
 
