@@ -1,5 +1,4 @@
 #include "Whatever.hpp"
-#include "Awesome.hpp"
 
 int	main(void)
 {
@@ -32,15 +31,6 @@ int	main(void)
 	std::cout << "e: " << e << ", f: " << f << std::endl;
 	std::cout << "min(e, f) = " << ::min(e, f) << std::endl;
 	std::cout << "max(e, f) = " << ::max(e, f) << std::endl;
-
-	Awesome g(2), h(4);
-	std::cout << "g: " << g << ", h: " << h << std::endl;
-	swap(g, h);
-	std::cout << "g: " << g << ", h: " << h << std::endl;
-	std::cout << "min(g, h) = " << min(g, h) << std::endl;
-	std::cout << "max(g, h) = " << max(g, h) << std::endl << std::endl;
-
-
 
 	return (0);
 }
