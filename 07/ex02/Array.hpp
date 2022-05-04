@@ -7,7 +7,7 @@ template< typename T >
 class Array
 {
 	public:
-		Array(void) : _array(NULL), _size(0) {}
+		Array(void) : _size(0), _array(NULL) {}
 
 		Array(unsigned int n) : _size(n)
 		{
@@ -37,14 +37,14 @@ class Array
 				delete [] _array;
 		}
 
-		T&	operator[](int i)
+		T&	operator[](int i) const
 		{
 			if (i < 0 || i > this->_size - 1)
 					throw(InvalidIndex());
 			return (this->_array[i]);
 		}
 
-		void	print(void)
+		void	print(void) const
 		{
 			for (int i=0; i < this->_size; i++)
 				std::cout << this->_array[i] << std::endl;

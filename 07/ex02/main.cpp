@@ -137,6 +137,5 @@ int	main(void)
 	string_test3.print();
 	std::cout << std::endl;
 
-
 	return (0);
 }
