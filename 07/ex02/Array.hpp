@@ -37,18 +37,10 @@ class Array
 				delete [] _array;
 		}
 
-		int&	operator[](int i)
+		T&	operator[](int i)
 		{
-			try
-			{
-				if (i < 0 || i > this->_size - 1)
+			if (i < 0 || i > this->_size - 1)
 					throw(InvalidIndex());
-			}
-			catch (std::exception &e)
-			{
-				std::cout << e.what() << std::endl;
-				return (this->_size);
-			}
 			return (this->_array[i]);
 		}
 
