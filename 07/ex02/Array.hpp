@@ -37,7 +37,14 @@ class Array
 				delete [] _array;
 		}
 
-		T&	operator[](int i) const
+		T &	operator[](int i)
+		{
+			if (i < 0 || i > this->_size - 1)
+					throw(InvalidIndex());
+			return (this->_array[i]);
+		}
+
+		T const&	operator[](int i) const
 		{
 			if (i < 0 || i > this->_size - 1)
 					throw(InvalidIndex());
