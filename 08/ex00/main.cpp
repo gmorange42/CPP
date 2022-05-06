@@ -1,9 +1,9 @@
 #include "easyfind.hpp"
-#include <iostream>
 #include <algorithm>
 #include <vector>
 #include <list>
 #include <set>
+#include <map>
 
 
 int 	main(void)
@@ -20,8 +20,10 @@ int 	main(void)
 	std::list<int>::const_iterator	lit(int_list.begin()), lend(int_list.end());
 	for(;lit != lend; lit++)
 		std::cout << *lit << std::endl;
+	std::cout << "easyfind(int_list, 32)" << std::endl;
 	try {std::cout << easyfind(int_list, 32) << std::endl;}
 	catch (std::exception & e) { std::cout << e.what() << std::endl;}
+	std::cout << "easyfind(int_list, 42)" << std::endl;
 	try {std::cout << easyfind(int_list, 42) << std::endl;}
 	catch (std::exception & e) { std::cout << e.what() << std::endl;}
 
@@ -39,8 +41,10 @@ int 	main(void)
 	vend = int_vect.end();
 	for(;vit != vend; vit++)
 		std::cout << *vit << std::endl;
+	std::cout << "easyfind(int_vect, 4096)" << std::endl;
 	try {std::cout << easyfind(int_vect, 4096) << std::endl;}
 	catch (std::exception & e) { std::cout << e.what() << std::endl;}
+	std::cout << "easyfind(int_vect, 4095)" << std::endl;
 	try {std::cout << easyfind(int_vect, 4095) << std::endl;}
 	catch (std::exception & e) { std::cout << e.what() << std::endl;}
 
@@ -58,9 +62,24 @@ int 	main(void)
 	send = int_set.end();
 	for(;sit != send; sit++)
 		std::cout << *sit << std::endl;
+	std::cout << "easyfind(int_set, 4096)" << std::endl;
 	try {std::cout << easyfind(int_set, 4096) << std::endl;}
 	catch (std::exception & e) { std::cout << e.what() << std::endl;}
+	std::cout << "easyfind(int_set, 4095)" << std::endl;
 	try {std::cout << easyfind(int_set, 4095) << std::endl;}
 	catch (std::exception & e) { std::cout << e.what() << std::endl;}
+	
+	std::cout << std::endl << "--EMPTY LIST PART--" << std::endl;
+	std::list<int> int_empty_list;
+	std::list<int>::const_iterator	elit(int_empty_list.begin()), elend(int_empty_list.end());
+	for(;elit != elend; elit++)
+		std::cout << *elit << std::endl;
+	std::cout << "easyfind(int_empty_list, 32)" << std::endl;
+	try {std::cout << easyfind(int_empty_list, 32) << std::endl;}
+	catch (std::exception & e) { std::cout << e.what() << std::endl;}
+	std::cout << "easyfind(int_empty_list, 42)" << std::endl;
+	try {std::cout << easyfind(int_empty_list, 42) << std::endl;}
+	catch (std::exception & e) { std::cout << e.what() << std::endl;}
+	
 	return (0);
 }

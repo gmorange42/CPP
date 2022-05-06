@@ -2,8 +2,6 @@
 #define EASYFING_HPP
 
 #include <iostream>
-#include <algorithm>
-#include <vector>
 
 class	notfound : public std::exception
 {
@@ -17,7 +15,7 @@ class	notfound : public std::exception
 template< typename T >
 int	easyfind(T & a, int i)
 {
-	typename T::iterator it;
+	typename T::const_iterator it;
 	it = find(a.begin(), a.end(), i);
 	if (it == a.end())
 		throw (notfound());
