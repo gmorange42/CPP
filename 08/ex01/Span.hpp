@@ -1,0 +1,49 @@
+#ifndef	SPAN_HPP
+#define	SPAN_HPP
+
+#include <iostream>
+#include <list>
+#include <algorithm>
+
+class Span
+{
+	public:
+		Span(unsigned int n);
+		Span(Span const & ref);
+		Span&	operator=(Span const & rhs);
+		~Span(void);
+		void		addNumber(int nbr);
+		unsigned int	shortestSpan(void);
+		unsigned int	longestSpan(void);
+		void	printValues(void) const;
+		void		addMultiNumbers(unsigned int nbrOfTime, int toAdd);
+	private:
+		Span(void);
+		std::list<int> list;
+		std::list<int> sorted_list;
+		unsigned int	_n;
+
+		class sizeMax : public std::exception
+		{
+			const char * what(void) const throw()
+			{
+				return ("Max size reached");
+			}
+		};
+		class empty : public std::exception
+		{
+			const char * what(void) const throw()
+			{
+				return ("There isn't any value");
+			}
+		};
+		class oneElement : public std::exception
+		{
+			const char * what(void) const throw()
+			{
+				return ("There is only one value");
+			}
+		};
+};
+
+#endif
