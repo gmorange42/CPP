@@ -17,14 +17,6 @@ Span&	Span::operator=(Span const & rhs)
 
 Span::~Span(void) {}
 
-void	Span::addNumber(int nbr)
-{
-	if (this->list.size() >= this->_n )
-		throw(sizeMax());
-	this->list.push_back(nbr);
-	this->sorted_list.push_back(nbr);
-}
-
 unsigned int	Span::shortestSpan(void)
 {
 	if (this->list.empty())
@@ -32,19 +24,17 @@ unsigned int	Span::shortestSpan(void)
 	if (this->list.size() == 1)
 		throw(oneElement());
 
-	this->sorted_list.sort();
-
-	unsigned int	shortest = this->sorted_list.back() - this->sorted_list.front();
+	unsigned int	shortest = *this->list.rbegin() - *this->list.begin();
 	int		previousValue;
 
-	std::list<int>::const_iterator lit(this->sorted_list.begin());
-	std::list<int>::const_iterator lend(this->sorted_list.end());
+	std::multiset<int>::const_iterator lit(this->list.begin());
+	std::multiset<int>::const_iterator lend(this->list.end());
 
 	for (;lit != lend;)
 	{
 		previousValue = *lit;
 		lit++;
-		if (*lit - previousValue < shortest)
+		if ((static_cast<unsigned int>(*lit - previousValue)) < shortest)
 			shortest = *lit - previousValue;
 		if (shortest == 0)
 			break;
@@ -59,28 +49,27 @@ unsigned int	Span::longestSpan(void)
 	if (this->list.size() == 1)
 		throw(oneElement());
 
-	this->sorted_list.sort();
-
-	return (this->sorted_list.back() - this->sorted_list.front());
+	return (*this->list.rbegin() - *this->list.begin());
 }
 
 void	Span::printValues(void) const
 {
-	std::list<int>::const_iterator lit(this->list.begin()), lend(this->list.end());
+	std::multiset<int>::const_iterator lit(this->list.begin()), lend(this->list.end());
 	for (;lit != lend; lit++)
 		std::cout << *lit << std::endl;
 }
 
-void	Span::addMultiNumbers(unsigned int nbrOfTime, int toAdd)
+void	Span::addNumber(int nbr)
 {
-	if (this->list.size() + nbrOfTime > this->_n)
+	if (this->list.size() >= this->_n )
 		throw(sizeMax());
+	std::multiset<int>::const_iterator lit(this->list.end());
+	this->list.insert(lit, nbr);
+}
 
-	std::list<int>::iterator lit(list.begin());
-	advance(lit, this->list.size());
-	this->list.insert(lit, nbrOfTime, toAdd);
-
-	std::list<int>::iterator slit(sorted_list.begin());
-	advance(slit, this->sorted_list.size());
-	this->sorted_list.insert(slit, nbrOfTime, toAdd);
+void	Span::addMultiNumbers(Span & toCopy)
+{
+	if (this->list.size() + toCopy.list.size() > this->_n)
+		throw (sizeMax());
+	this->list.insert(toCopy.list.begin(), toCopy.list.end());
 }

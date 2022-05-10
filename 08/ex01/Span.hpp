@@ -2,7 +2,7 @@
 #define	SPAN_HPP
 
 #include <iostream>
-#include <list>
+#include <set>
 #include <algorithm>
 
 class Span
@@ -16,11 +16,10 @@ class Span
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
 		void	printValues(void) const;
-		void		addMultiNumbers(unsigned int nbrOfTime, int toAdd);
+		void		addMultiNumbers(Span & toCopy);
 	private:
 		Span(void);
-		std::list<int> list;
-		std::list<int> sorted_list;
+		std::multiset<int> list;
 		unsigned int	_n;
 
 		class sizeMax : public std::exception

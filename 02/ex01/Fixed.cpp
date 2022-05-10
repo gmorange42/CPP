@@ -19,7 +19,7 @@ Fixed::Fixed(int const toConvert)
 
 Fixed::Fixed(float const toConvert)
 {
-	this->_nbr = round(toConvert * (1 << 8));
+	this->_nbr = round(toConvert * (1 << this->_bpp));
 	std::cout << "Float contructor called" << std::endl;
 }
 
