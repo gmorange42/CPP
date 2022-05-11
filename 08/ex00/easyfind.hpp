@@ -1,5 +1,5 @@
-#ifndef EASYFING_HPP
-#define EASYFING_HPP
+#ifndef EASYFIND_HPP
+#define EASYFIND_HPP
 
 #include <iostream>
 
@@ -13,7 +13,7 @@ class	notfound : public std::exception
 };
 
 template< typename T >
-int	easyfind(T & a, int i)
+int	easyfind(T const & a, int const i)
 {
 	typename T::const_iterator it;
 	it = find(a.begin(), a.end(), i);

@@ -37,10 +37,10 @@ int	main(void)
 	s.push(5);
 	s.push(737);
 	s.push(0);
-//	std::stack<int>::iterator sit = s.begin();
-//	std::stack<int>::iterator site = s.end();
-//	++sit;
-//	--sit;
+//	std::stack<int>::iterator sit = s.begin();	Don't works because
+//	std::stack<int>::iterator site = s.end();	there isn't
+//	++sit;						iterators
+//	--sit;						with std::stack
 //	while (sit != site)
 //	{
 //		std::cout << *sit << std::endl;

@@ -2,7 +2,7 @@
 #define	SPAN_HPP
 
 #include <iostream>
-#include <set>
+#include <list>
 #include <algorithm>
 
 class Span
@@ -19,7 +19,7 @@ class Span
 		void		addMultiNumbers(Span & toCopy);
 	private:
 		Span(void);
-		std::multiset<int> list;
+		std::list<int> list;
 		unsigned int	_n;
 
 		class sizeMax : public std::exception
